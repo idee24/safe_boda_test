@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#143861</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="background_color">#4fc4c4c4</color>
+    <color name="loader_background_color">#cc000000</color>
+    <color name="text_color_hint">#93A4B8</color>
+    <color name="text_color_dark">#143861</color>
+    <color name="ash">#5CF8F8F8</color>
+    <color name="light_ash">#AEF8F8F8</color>
+    <color name="dark_ash">#08F8F8F8</color>
+    <color name="transparent">#00000000</color>
+    <color name="blue_link_text">#2f73f0</color>
+</resources>

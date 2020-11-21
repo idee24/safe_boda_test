@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:background="@color/background_color"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/headerLayout"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:background="@color/colorPrimaryDark"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    app:layout_constraintStart_toEndOf="@id/backIcon"
+                    android:layout_marginTop="@dimen/sixty_dp"
+                    android:textColor="@android:color/white"
+                    android:text="@string/github"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="@dimen/font_size_twenty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/searchLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/sixteen_dp"
+                    android:layout_marginStart="@dimen/sixteen_dp"
+                    android:layout_marginEnd="@dimen/sixteen_dp"
+                    android:layout_marginBottom="@dimen/sixteen_dp"
+                    app:hintTextColor="@color/text_color_hint"
+                    android:hint="@string/search">
+
+                    <EditText
+                        android:id="@+id/searchField"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:textSize="@dimen/font_size_thirteen"
+                        android:textColor="@color/text_color_dark"
+                        android:inputType="text"
+                        android:drawableStart="@drawable/search_icon"
+                        android:elevation="@dimen/eight_dp"
+                        android:background="@android:color/white"
+                        android:paddingStart="@dimen/sixteen_dp"
+                        android:drawablePadding="@dimen/eight_dp"
+                        android:paddingEnd="@dimen/eight_dp"
+                        android:layout_marginEnd="@dimen/eight_dp"
+                        android:layout_marginTop="@dimen/eight_dp"
+                        android:layout_marginBottom="@dimen/eight_dp"
+                        android:importantForAutofill="no"
+                        tools:ignore="LabelFor" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/userRecyclerView"
+            android:layout_margin="@dimen/eight_dp"
+            android:visibility="gone"
+            android:paddingBottom="@dimen/two_hundred_and_fifty_dp"
+            android:clipToPadding="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/headerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/emptyStateImage"
+            android:layout_margin="@dimen/eight_dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/headerLayout"
+            android:contentDescription="@string/img_dsc"
+            android:src="@drawable/empty"
+            android:alpha="0.5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

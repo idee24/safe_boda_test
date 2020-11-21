@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">safe_boda_Challange</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search">Search</string>
+    <string name="img_dsc">image</string>
+    <string name="expansion_set_name">Expansion/Set name:</string>
+    <string name="rarity">Rarity:</string>
+    <string name="card_type">Card Type</string>
+    <string name="network_error_text">Network Error</string>
+    <string name="problem_text">A problem occurred</string>
+    <string name="dismiss_text">DISMISS</string>
+    <string name="retry_text">RETRY</string>
+    <string name="no_results_text">Could\'nt find any results</string>
+    <string name="back_icon">back_icon</string>
+    <string name="release_date">Release Date: </string>
+    <string name="mana_cost">Mana Cost:</string>
+    <string name="cmc">CMC:</string>
+    <string name="oracle_text">Oracle text:</string>
+    <string name="legalities">Legalities</string>
+    <string name="user_empty_message">Could\'nt Find User Details</string>
+    <string name="github_users">GITHUB USERS</string>
+    <string name="image_dsc">image</string>
+    <string name="profile">Profile</string>
+    <string name="bio">Bio:</string>
+    <string name="public_repository">Public repository:</string>
+    <string name="updated_at">Updated at:</string>
+    <string name="public_gists">Public gists:</string>
+    <string name="github">GitHub</string>
+</resources>

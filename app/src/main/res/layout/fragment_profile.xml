@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.ProfileFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/headerLayout"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:background="@color/colorPrimaryDark"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/backIcon"
+                    android:layout_marginTop="@dimen/sixty_dp"
+                    android:layout_marginStart="@dimen/sixteen_dp"
+                    android:layout_marginBottom="@dimen/sixteen_dp"
+                    android:contentDescription="@string/image_dsc"
+                    android:src="@drawable/chevron_left_white"
+                    android:background="?android:attr/selectableItemBackground"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="@dimen/thirty_two_dp"
+                    android:layout_height="@dimen/thirty_two_dp"/>
+
+                <TextView
+                    app:layout_constraintStart_toEndOf="@id/backIcon"
+                    android:layout_marginTop="@dimen/sixty_dp"
+                    android:textColor="@android:color/white"
+                    android:text="@string/profile"
+                    android:layout_marginStart="@dimen/twenty_four_dp"
+                    android:textSize="@dimen/font_size_twenty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <ScrollView
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/headerLayout"
+            android:paddingBottom="@dimen/two_hundred_and_fifty_dp"
+            android:clipToPadding="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_marginStart="@dimen/twenty_four_dp"
+                android:layout_marginEnd="@dimen/twenty_four_dp"
+                android:layout_marginTop="@dimen/twenty_four_dp"
+                android:layout_marginBottom="@dimen/two_hundred_and_fifty_dp"
+                app:cardCornerRadius="@dimen/four_dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_ash"
+                    android:orientation="vertical">
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profileImageView"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/avatar"
+                        android:layout_margin="@dimen/twenty_four_dp"
+                        android:layout_width="@dimen/hundred_and_fifty_dp"
+                        android:layout_height="@dimen/hundred_and_fifty_dp"/>
+
+                    <TextView
+                        android:id="@+id/nameTextView"
+                        android:textColor="@android:color/black"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="@dimen/font_size_eighteen"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/cityTextView"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="@dimen/font_size_fourteen"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:drawableStartCompat="@drawable/place_icon" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/sixteen_dp"
+                        android:layout_marginBottom="@dimen/eight_dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/followersTextView"
+                            android:padding="@dimen/eight_dp"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:textColor="@android:color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <View
+                            android:background="@android:color/black"
+                            android:layout_width="2dp"
+                            android:layout_margin="@dimen/eight_dp"
+                            android:layout_height="match_parent"/>
+
+                        <TextView
+                            android:id="@+id/followingTextView"
+                            android:padding="@dimen/eight_dp"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:textColor="@android:color/black"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:padding="@dimen/sixteen_dp"
+                        android:background="@android:color/white"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/font_size_fourteen"
+                            android:text="@string/bio"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/bioTextView"
+                            android:textSize="@dimen/font_size_fourteen"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+
+                        <TextView
+                            android:layout_marginTop="@dimen/sixteen_dp"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/font_size_fourteen"
+                            android:text="@string/public_repository"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/pRTextView"
+                            android:textSize="@dimen/font_size_fourteen"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_marginTop="@dimen/sixteen_dp"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/font_size_fourteen"
+                            android:text="@string/public_gists"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/pGTextView"
+                            android:textSize="@dimen/font_size_fourteen"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_marginTop="@dimen/sixteen_dp"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/font_size_fourteen"
+                            android:text="@string/updated_at"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/updateDateTextView"
+                            android:textSize="@dimen/font_size_fourteen"
+                            android:layout_marginBottom="@dimen/sixteen_dp"
+                            android:textStyle="bold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/linkTextView"
+                            android:textSize="@dimen/font_size_fourteen"
+                            android:layout_marginBottom="@dimen/sixteen_dp"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:textColor="@color/blue_link_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
