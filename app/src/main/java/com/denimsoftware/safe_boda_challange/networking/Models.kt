@@ -20,10 +20,10 @@ data class SearchResponse(
 )
 
 data class SearchModel(
-    var login: String,
-    var id: Int,
-    var avatar_url: String,
-    var url: String,
+    var login: String? = "",
+    var id: Int? = 0,
+    var avatar_url: String? = "",
+    var url: String? = "",
 )
 
 data class UserModel(

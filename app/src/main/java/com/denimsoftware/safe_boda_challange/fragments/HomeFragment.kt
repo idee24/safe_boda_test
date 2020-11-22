@@ -60,7 +60,7 @@ class HomeFragment : Fragment() {
         val dismissAction = View.OnClickListener { dismissSnackBar() }
         val retryAction = View.OnClickListener { retrieveUsers(activity, constraintLayout, searchKey) }
 
-        val call = generateService(GitHubService::class.java).retrieveUsers(searchKey, 1)
+        val call = generateService(GitHubService::class.java).retrieveUsers(searchKey)
         call.enqueue(object: Callback<SearchResponse> {
 
             override fun onResponse(call: Call<SearchResponse>, response: Response<SearchResponse>) {
@@ -121,6 +121,6 @@ class HomeFragment : Fragment() {
         val layoutManager = androidx.recyclerview.widget.LinearLayoutManager(context,
             RecyclerView.VERTICAL, false)
         userRecyclerView.layoutManager = layoutManager
-        userRecyclerView.adapter = UserAdapter(context, searchList, true)
+        userRecyclerView.adapter = UserAdapter(context, searchList)
     }
 }

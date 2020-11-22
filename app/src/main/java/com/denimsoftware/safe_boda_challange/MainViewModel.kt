@@ -19,8 +19,12 @@ class MainViewModel(application: Application): AndroidViewModel(application) {
     private var fragmentMap = LinkedHashMap<Fragment, AppFragment>()
     private lateinit var currentFragment: Fragment
     var searchList = LinkedList<SearchModel>()
+    var followingList = LinkedList<SearchModel>()
+    var followersList = LinkedList<SearchModel>()
+    var followUserName = ""
     var currentUserName = ""
     var currentSearchString = ""
+    var currentProfile = UserModel()
 
     fun initFragmentNavStructure(activity: MainActivity) {
 

@@ -19,6 +19,7 @@
     <string name="oracle_text">Oracle text:</string>
     <string name="legalities">Legalities</string>
     <string name="user_empty_message">Could\'nt Find User Details</string>
+    <string name="follow_empty_message">Could\'nt Find any data</string>
     <string name="github_users">GITHUB USERS</string>
     <string name="image_dsc">image</string>
     <string name="profile">Profile</string>

@@ -16,7 +16,7 @@ import java.util.*
 /**
  *Created by Yerimah on 11/21/2020.
  */
-class UserAdapter(private val activity: MainActivity, private val searchList: LinkedList<SearchModel>, private val isUserProfile: Boolean):
+class UserAdapter(private val activity: MainActivity, private val searchList: LinkedList<SearchModel>):
     RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
@@ -26,14 +26,12 @@ class UserAdapter(private val activity: MainActivity, private val searchList: Li
     }
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
-        loadImage(activity, holder.imageView, searchList[position].avatar_url, R.drawable.placeholder_image)
+        loadImage(activity, holder.imageView, searchList[position].avatar_url ?: "", R.drawable.placeholder_image)
         holder.nameTextView.text = searchList[position].login
         holder.idTextView.text = searchList[position].id.toString()
-        if (isUserProfile) {
-            holder.itemView.setOnClickListener {
-                activity.viewModel.currentUserName = searchList[position].login
-                activity.viewModel.loadFragment(activity.viewModel.getFragmentByKey(Constants.PROFILE_FRAGMENT).fragment, activity)
-            }
+        holder.itemView.setOnClickListener {
+            activity.viewModel.currentUserName = searchList[position].login ?: ""
+            activity.viewModel.loadFragment(activity.viewModel.getFragmentByKey(Constants.PROFILE_FRAGMENT).fragment, activity)
         }
     }
 

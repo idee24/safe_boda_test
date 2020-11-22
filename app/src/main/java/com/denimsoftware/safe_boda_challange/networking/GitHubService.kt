@@ -12,8 +12,7 @@ import retrofit2.http.Url
 interface GitHubService {
 
     @GET(Routes.SEARCH_END_POINT)
-    fun retrieveUsers(@Query(APIParameters.SEARCH_PARAM) searchKey: String,
-                      @Query(APIParameters.PAGE_PARAM) page: Int): Call<SearchResponse>
+    fun retrieveUsers(@Query(APIParameters.SEARCH_PARAM) searchKey: String): Call<SearchResponse>
 
     @GET
     fun retrieveUser(@Header(APIParameters.ACCEPT_PARAM) key: String,
@@ -21,5 +20,7 @@ interface GitHubService {
 
     @GET
     fun retrieveFollow(@Header(APIParameters.ACCEPT_PARAM) key: String,
-                       @Url url: String): Call<List<SearchModel>>
+                       @Url url: String,
+                       @Query(APIParameters.PAGE_PARAM) page: Int,
+                       @Query(APIParameters.PER_PAGE_PARAM) perPage: Int): Call<List<SearchModel>>
 }

@@ -6,4 +6,5 @@ object APIParameters {
     const val PAGE_PARAM = "page"
     const val ACCEPT_PARAM = "accept"
     const val NAME_PARAM = "username"
+    const val PER_PAGE_PARAM = "per_page"
 }

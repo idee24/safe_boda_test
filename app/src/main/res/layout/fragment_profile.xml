@@ -82,7 +82,7 @@
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/profileImageView"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/avatar"
+                        android:src="@drawable/loading_image"
                         android:layout_margin="@dimen/twenty_four_dp"
                         android:layout_width="@dimen/hundred_and_fifty_dp"
                         android:layout_height="@dimen/hundred_and_fifty_dp"/>

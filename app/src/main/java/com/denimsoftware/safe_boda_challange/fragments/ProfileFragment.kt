@@ -45,12 +45,14 @@ class ProfileFragment: Fragment() {
         context.viewModel.loadFragment(context.viewModel.getFragmentByKey(Constants.SOCIAL_FRAGMENT).fragment, context)
     }
 
-    private fun retrieveUser(
-        activity: MainActivity,
-        constraintLayout: ConstraintLayout) {
-        val dismissAction = View.OnClickListener { dismissSnackBar() }
-        val retryAction = View.OnClickListener { retrieveUser(activity, constraintLayout) }
+    private fun retrieveUser(activity: MainActivity, constraintLayout: ConstraintLayout) {
 
+        if (activity.viewModel.currentUserName == activity.viewModel.currentProfile.login) {
+            initViews(activity, activity.viewModel.currentProfile)
+            return
+        }
+
+        val retryAction = View.OnClickListener { retrieveUser(activity, constraintLayout) }
         val call = generateService(GitHubService::class.java).
         retrieveUser("application/vnd.github.v3+json", Routes.USER_END_POINT + activity.viewModel.currentUserName)
         call.enqueue(object : Callback<UserModel> {
@@ -60,6 +62,7 @@ class ProfileFragment: Fragment() {
                     response.body().let {
                         val payload = it
                         if (payload != null) {
+                            activity.viewModel.currentProfile = payload
                             initViews(activity, payload)
                         }
                         else {
