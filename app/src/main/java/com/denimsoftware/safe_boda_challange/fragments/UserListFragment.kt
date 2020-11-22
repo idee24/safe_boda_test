@@ -151,8 +151,10 @@ class UserListFragment(private val endPoint: String) : Fragment() {
     }
 
     private fun showEmptyState() {
-        emptyStateImage.visibility = View.VISIBLE
-        usersRecyclerView.visibility = View.GONE
+        if (followAdapter.itemCount < 2) {
+            emptyStateImage.visibility = View.VISIBLE
+            usersRecyclerView.visibility = View.GONE
+        }
     }
 
     private fun hideEmptyState() {
