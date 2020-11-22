@@ -107,13 +107,17 @@ class HomeFragment : Fragment() {
 
 
     private fun showEmptyState() {
-        emptyStateImage.visibility = View.VISIBLE
-        userRecyclerView.visibility = View.GONE
+        if (emptyStateImage != null) {
+            emptyStateImage.visibility = View.VISIBLE
+            userRecyclerView.visibility = View.GONE
+        }
     }
 
     private fun hideEmptyState() {
-        emptyStateImage.visibility = View.GONE
-        userRecyclerView.visibility = View.VISIBLE
+        if (emptyStateImage != null) {
+            emptyStateImage.visibility = View.GONE
+            userRecyclerView.visibility = View.VISIBLE
+        }
     }
 
 
